@@ -1,0 +1,58 @@
+.container {
+  margin: 0 auto;
+  max-width: 56em;
+  padding: 1em 0;
+}
+
+.grid {
+  /* Grid Fallback */
+  display: flex;
+  flex-wrap: wrap;
+
+  /* Supports Grid */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  grid-auto-rows: minmax(150px, auto);
+  grid-gap: 0.1em;
+}
+
+.module {
+  /* Demo-Specific Styles */
+  background: #eaeaea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+
+  /* Flex Fallback */
+  margin-left: 5px;
+  margin-right: 5px;
+  flex: 1 1 200px;
+}
+
+.fab {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  z-index: 14;
+  border-radius: 50%;
+  background: cornflowerblue;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  padding-top: 22px;
+}
+
+.module div {
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+}
+
+/* If Grid is supported, remove the margin we set for the fallback */
+@supports (display: grid) {
+  .module {
+    margin: 0;
+  }
+}
